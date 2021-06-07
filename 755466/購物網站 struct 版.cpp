@@ -61,3 +61,4 @@ int main() {
     cout << "你總共花費" << totalmoney << "元";
 }
 //產品 數量 金額
+
