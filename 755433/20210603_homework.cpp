@@ -88,11 +88,15 @@ int main() {
         cin >> Coupon;
         while (true) {
             if (Coupon == "zxcvbnm") { // 滿100折50 --> zxcvbnm
-                total -= 50;
-                break;
+                if (total >= 100) {
+                    total -= 50;
+                    break;
+                }
             } else if (Coupon == "asdfghjkl") { //滿100打8折 --> asdfghjkl
-                total *= 0.8;
-                break;
+                if (total >= 100) {
+                    total *= 0.8;
+                    break;
+                }
             } else if (Coupon == "0") {
                 break;
             } else {
@@ -115,9 +119,7 @@ int main() {
     cout << "- - - - - - - - - \n";
     for (int i = 0; i < CommodityCount; i++) {
         if (user[i].Pname != "") {
-            cout << user[i].Pname << " * " <<
-                    user[i].Pcount << " = " <<
-                    user[i].Ptotal << endl;
+            cout << user[i].Pname << " * " << user[i].Pcount << " = " << user[i].Ptotal << endl;
         }
     }
 
