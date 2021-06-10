@@ -9,11 +9,11 @@ struct product {
     int price;
     int stocks;
 };
-struct cart {
+/*struct cart {
     string names;
     int count;
     int sub_total;
-};
+};*/
 
 int main() {
     product product[3];
