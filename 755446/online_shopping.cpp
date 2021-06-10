@@ -28,7 +28,7 @@ int main() {
     product[2].stocks = 10;
 
     vector<string> cartBuyProductName;
-    vector<int> cartBuyCount;
+    vector<int> cartBuyCount;         //這裡我不知道怎麼改
     vector<int> cartBuySubTotal;
 
     int buyProduct;
