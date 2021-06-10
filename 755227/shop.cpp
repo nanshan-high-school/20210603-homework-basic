@@ -69,7 +69,7 @@ int main() {
     for (int i = 0; i < 3; i++) {
         cout << "購買" << product[i].name << ": " << SelfBuyNum[i] << "個，花費" << SelfCost[i] << "元" << endl;
     }
-    cout << "折價" << disacountNum << "元" << endl;
+    cout << "優惠代碼折價" << disacountNum << "元" << endl;
     cout << "運費" << shipFee << "元" << endl;
     cout << "總金額為: " << sum << endl;
     cout << "--------------------" << endl;
