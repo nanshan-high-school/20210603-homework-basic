@@ -85,15 +85,17 @@ int main() {
     cout << "是否有優惠券？請回答[y]或著[n]\n";
     cin >> CouponYN;
     if (CouponYN == "y") {
-        cin >> Coupon;
-        while (true) {
+        cout << "請輸入優惠券：\n";
+        while (cin >> Coupon) {
             if (Coupon == "zxcvbnm") { // 滿100折50 --> zxcvbnm
                 if (total >= 100) {
+                    cout << "輸入正確！\n";
                     total -= 50;
                     break;
                 }
             } else if (Coupon == "asdfghjkl") { //滿100打8折 --> asdfghjkl
                 if (total >= 100) {
+                    cout << "輸入正確！\n";
                     total *= 0.8;
                     break;
                 }
@@ -101,6 +103,7 @@ int main() {
                 break;
             } else {
                 cout << "！輸入錯誤，請再輸入一次。若放棄輸入則輸入0！\n";
+                // continue;
             }
         }
     }
@@ -114,20 +117,36 @@ int main() {
 
     //明細
     cout << endl << "_____購物明細_____" << endl;
-    cout << endl << "總費用：" << total << endl;
+    if (Coupon == "zxcvbnm") {
+        cout << endl << "總費用：" << total + 50 << endl;
+    } else if (Coupon == "asdfghjkl") {
+        cout << endl << "總費用：" << total / 0.8 << endl;
+    } else if (CouponYN == "n") {
+        cout << endl << "總費用：" << total << endl;
+    }
     
-    cout << "- - - - - - - - - \n";
+    
+    cout << " - - - - - - - - - \n";
     for (int i = 0; i < CommodityCount; i++) {
         if (user[i].Pname != "") {
-            cout << user[i].Pname << " * " << user[i].Pcount << " = " << user[i].Ptotal << endl;
+            cout << user[i].Pname << " * " <<
+                    user[i].Pcount << " = " <<
+                    user[i].Ptotal << endl;
         }
     }
 
     if (shipping == true) {
-        cout << "- - - - - - - - - \n";
+        cout << " - - - - - - - - - \n";
         cout << "運費：60\n";
     }
-    cout << "- - - - - - - - - " << endl << "應繳費用：" << total << endl;
+    if (Coupon == "zxcvbnm") {
+        cout << " - - - - - - - - - \n";
+        cout << "優惠券：滿 100 折 50\n";
+    } else if (Coupon == "asdfghjkl") {
+        cout << " - - - - - - - - - \n";
+        cout << "優惠券：滿 100 打 8 折\n";
+    }
+    cout << " - - - - - - - - - " << endl << "應繳費用：" << total << endl;
     cout << "感謝您的購買，歡迎下次蒞臨選購。";
     // 資料測試：
     // 3
