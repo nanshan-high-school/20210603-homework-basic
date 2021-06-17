@@ -103,7 +103,6 @@ int main() {
                 break;
             } else {
                 cout << "！輸入錯誤，請再輸入一次。若放棄輸入則輸入0！\n";
-                // continue;
             }
         }
     }
@@ -121,6 +120,8 @@ int main() {
         cout << endl << "總費用：" << total + 50 << endl;
     } else if (Coupon == "asdfghjkl") {
         cout << endl << "總費用：" << total / 0.8 << endl;
+    } else if (Coupon == "0") {
+        cout << endl << "總費用：" << total << endl;
     } else if (CouponYN == "n") {
         cout << endl << "總費用：" << total << endl;
     }
